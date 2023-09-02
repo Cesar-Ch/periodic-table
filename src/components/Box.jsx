@@ -1,13 +1,14 @@
-const Box = ({ element, name, group,number }) => {
+const Box = ({ element, name, group, number }) => {
     return (
-        <div className={`relative rounded-md mr-1 mb-1 p-1 text-center`} style={{ border: `2px solid var(--${group})`, color: `var(--${group})`, filter: `drop-shadow(0 0 5px var(--${group})` }} >
-            <div className="flex justify-start font-bold">
+        <div className={`w-[75px] h-[75px] relative rounded-md mr-1 mb-1 p-1 text-center`} style={{ border: `2px solid #3f4a53`, color: `var(--${group})`, backgroundColor: `var(--${group})`,boxShadow:`1px 2.5px 1px #202020`}} >
+            <div className="flex justify-start font-extrabold text-[#3f4a53]">
                 {number}
             </div>
-            <div className="text-2xl">
+            <div className="text-2xl text-[#3f4a53]" style={{
+                textShadow: `1px  1.5px  1px   var(--${group}-text)`,color: `var(--${group}-text) `}}>
                 {element}
             </div>
-            <div >
+            <div style={{ color: `var(--${group}-text)` }}>
                 {name}
             </div>
 

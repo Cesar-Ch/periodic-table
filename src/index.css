@@ -7,34 +7,47 @@
 
 
 :root {
-  --alkali-metals: #85E6C5;
-  --non-metals: #068DA9;
-  --alkaline-earth-metals: #F8485E;
-  --lanthanoids: #00C1D4;
-  --aktinoids: #C08261;
-  --transitionMetals: #A084E8;
-  --postTransitionMetals: #35A29f;
-  --metalloids: #EA906C;
-  --nobleGasses: #EA1179;
-  --uknown: #B9B4C7;
+  --alkali-metals: #dbf8ff;
+  --non-metals: #e6f0ff;
+  --alkaline-earth-metals: #ffebeb;
+  --lanthanoids: #e6f5ff;
+  --aktinoids: #ffeadb;
+  --transition-metals: #f5ecfd;
+  --post-transition-metals: #dcfaeb;
+  --metalloids: #fef9e6;
+  --noble-gasses: #ffebee;
+  --unknown: #e9e9ec;
+  --alkali-metals-text: #00758c;
+  --non-metals-text:#0060f0;
+  --alkaline-earth-metals-text:#d60024;
+  --lanthanoids-text:#029fa6;
+  --aktinoids-text:#e44d1b;
+  --transition-metals-text:#6232ec;
+  --unknown-text:#3f374f;
+  --metalloids-text:#fe7e00;
+  --post-transition-metals-text:#00b055;
+  --noble-gasses-text:#cd1d5e;
 }
 
 
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #23272E;
-  
+  background-color: #383838;
+
 }
-body::-webkit-scrollbar{
+
+body::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
-body::-webkit-scrollbar-thumb{
+
+body::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
-body::-webkit-scrollbar-track{
+
+body::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
