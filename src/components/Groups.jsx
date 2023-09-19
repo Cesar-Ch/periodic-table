@@ -5,15 +5,20 @@ const Groups = ({ onGroupClick }) => {
     const handleGroupClick = (group) => {
         onGroupClick(group)
     }
+    console.log(`${groups[0].toLowerCase().split(' ').join('-')}`)
 
     return (
-        <header>
-
-            <nav className="flex items-center text-sm w-[100%]">
+        <div>
+            <nav className="w-[100%] flex items-center text-sm  overflow-y-hidden overflow-scroll text-black dark:text-white px-4">
                 {
                     groups.map((group, i) => (
-                        <div key={i} >
-                            <p onClick={() => handleGroupClick(groups[i].toLowerCase().split(' ').join('-'))} className={`p-3 cursor-pointer`} style={{ color: `var(--${groups[i].toLowerCase().split(' ').join('-')})`, filter: `drop-shadow(0 0 5px var(--${groups[i].toLowerCase().split(' ').join('-')})` }} >
+                        <div key={i} className="flex items-center ">
+                            <div className="w-[15px] h-[15px]  rounded-[50%]"
+                            style={{backgroundColor: `var(--${group.toLowerCase().split(' ').join('-')})`,border:`3px solid var(--${group.toLowerCase().split(' ').join('-')}-text)`}}>
+                            </div>
+                            <p
+                                onClick={() => handleGroupClick(groups[i].toLowerCase().split(' ').join('-'))}
+                                className={`p-3 cursor-pointer whitespace-nowrap`}  >
                                 {group}
                             </p>
                         </div>
@@ -21,7 +26,7 @@ const Groups = ({ onGroupClick }) => {
                 }
 
             </nav>
-        </header>
+        </div>
     )
 }
 

@@ -33,21 +33,33 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #303030;
-
 }
 
-body::-webkit-scrollbar {
+main::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
 
-body::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
-body::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+nav::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+nav::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }

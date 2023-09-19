@@ -4,12 +4,13 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      borderColor:{
+      borderColor: {
         "alkaliMetals": "#85E6C5",
         "alkalineEarthMetals": "#F8485E",
-        "lanthanoids" :"#00C1D4",
+        "lanthanoids": "#00C1D4",
         "aktinoids": "#C08261",
         "transitionMetals": "#A084E8",
         "postTransitionMetals": "#35A29f",

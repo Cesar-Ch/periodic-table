@@ -4,15 +4,30 @@ import Groups from "./components/Groups"
 import { periodicTable } from "./components/consts"
 import { blockF } from "./components/consts"
 import ElementsGroupsF from "./components/ElementsGroupsF"
+import Switch from "./components/Switch"
 
 function App() {
 
+  const [theme, setTheme] = useState(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })
   const ref = useRef(null)
   const [selectedGroup, setSelectedGrooup] = useState('all')
 
   const handleGroupClick = (group) => {
     setSelectedGrooup(group)
   }
+ 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.querySelector("html").classList.add("dark")
+    } else {
+      document.querySelector("html").classList.remove("dark")
+    }
+  }, [theme])
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -27,27 +42,37 @@ function App() {
     }
   }, [])
   return (
-    <div className="p-10 text-[10px]  w-[100vw] h-[vh]">
-      <main className="flex justify-start">
-        {
-          periodicTable.map((element, i) => (
-            <ElementsGroups elementGroup={element} key={i} selectedGroup={selectedGroup} />
-          ))
-        }
-      </main>
+    <main className="text-[10px] w-[100%] h-[100%] overflow-auto ">
+      <div className="w-[100%] h-[100%] flex flex-col mb-32">
+        <section className="w-[100%] h-[100%] p-10  flex justify-start flex-col">
+          <div className="flex">
+            {
+              periodicTable.map((element, i) => (
+                <ElementsGroups elementGroup={element} key={i} selectedGroup={selectedGroup} />
+              ))
+            }
+          </div>
+          <div className="flex justify-start ml-[160px] mt-5 flex-wrap">
+            {
+              blockF.map((element, i) => (
+                <ElementsGroupsF elementGroup={element} key={i} selectedGroup={selectedGroup} />
+              ))
+            }
+          </div>
+        </section>
 
-      <section className="flex justify-start ml-[160px] mt-5 flex-wrap">
-        {
-          blockF.map((element, i) => (
-            <ElementsGroupsF elementGroup={element} key={i} selectedGroup={selectedGroup} />
-          ))
-        }
-      </section>
-      <footer ref={ref}>
-        <Groups onGroupClick={handleGroupClick} />
-      </footer>
+        <footer ref={ref} className="z-10 bottom-[125px] fixed translate-y-[100%] max-w-[100%] m-0  bg-white dark:bg-[#303030] w-[100%] flex flex-col p-0 shadow-[0_-2px_4px_0_rgba(60,64,67,0.15)] dark:shadow-[0_-2px_4px_0_rgba(230,230,230,0.3)]">
+          <div className="p-5 justify-between flex">
+            <h1 className="text-3xl font-bold text-black dark:text-white">Periodic Table </h1>
 
-    </div>
+            <Switch theme={theme} setTheme={setTheme}/>
+          </div>
+
+          <Groups onGroupClick={handleGroupClick} />
+
+        </footer>
+      </div>
+    </main>
   )
 }
 
