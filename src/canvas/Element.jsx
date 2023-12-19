@@ -5,7 +5,7 @@ import Loader from "./Loader"
 import { useGLTF, OrbitControls, Preload } from "@react-three/drei"
 
 const CanvasElement = ({ name, number }) => {
-    const element = useGLTF(`/elements/element_${number.padStart(3,'0')}_${name.toLowerCase().trim()}.glb`)
+    const element = useGLTF(`elements/element_${number.padStart(3,'0')}_${name.toLowerCase().trim()}.glb`)
     return (
         <mesh>
             <hemisphereLight intensity={3.15} groundColor="black" />
