@@ -18,7 +18,7 @@ const InfoElement = () => {
                             <h1 className="text-3xl dark:text-white text-black">{newElement.name} ({newElement.element}) - {newElement.number}</h1>
                             <h3 className="text-xl dark:text-white text-black my-2">{newElement.group[0].toUpperCase()}{newElement.group.slice(1,)}</h3>
                             <a href={`https://en.wikipedia.org/wiki/${newElement.name}`} target="__blank" className="bg-slate-200 text-black/75 text-xs flex items-center rounded-md p-1 w-[200px] my-3">
-                                <img src="/wikipedia.png" alt="logo de wikipedia" width={30} />
+                                <img src="wikipedia.png" alt="logo de wikipedia" width={30} />
                                 More about {newElement.name}
                             </a>
                         </div>
