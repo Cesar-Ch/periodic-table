@@ -5,22 +5,24 @@ import { periodicTable } from "./components/consts"
 import { blockF } from "./components/consts"
 import ElementsGroupsF from "./components/ElementsGroupsF"
 import Switch from "./components/Switch"
-
+import InfoElement from "./components/InfoElement"
+import { ElementContextProvider } from "./context/TaskContext"
+// import { useElement } from "./context/TaskContext"
 function App() {
 
+  const ref = useRef(null)
+  const [selectedGroup, setSelectedGrooup] = useState('all')
   const [theme, setTheme] = useState(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
     return "light";
   })
-  const ref = useRef(null)
-  const [selectedGroup, setSelectedGrooup] = useState('all')
 
   const handleGroupClick = (group) => {
     setSelectedGrooup(group)
   }
- 
+
   useEffect(() => {
     if (theme === "dark") {
       document.querySelector("html").classList.add("dark")
@@ -38,41 +40,42 @@ function App() {
     document.addEventListener('click', handleClickOutside)
     return () => {
       document.removeEventListener('click', handleClickOutside)
-
     }
   }, [])
+
   return (
-    <main className="text-[10px] w-[100%] h-[100%] overflow-auto ">
-      <div className="w-[100%] h-[100%] flex flex-col mb-32">
-        <section className="w-[100%] h-[100%] p-10  flex justify-start flex-col">
-          <div className="flex">
-            {
-              periodicTable.map((element, i) => (
-                <ElementsGroups elementGroup={element} key={i} selectedGroup={selectedGroup} />
-              ))
-            }
-          </div>
-          <div className="flex justify-start ml-[160px] mt-5 flex-wrap">
-            {
-              blockF.map((element, i) => (
-                <ElementsGroupsF elementGroup={element} key={i} selectedGroup={selectedGroup} />
-              ))
-            }
-          </div>
-        </section>
+    <ElementContextProvider>
+      <InfoElement/>
+      <main className="text-[10px] w-[100vw] h-[100vh] overflow-auto">
+        <div className="w-[100%]  flex flex-col mb-32">
+          <section className="w-[100%] p-10  flex justify-start flex-col">
+            <div className="flex">
+              {
+                periodicTable.map((element, i) => (
+                  <ElementsGroups elementGroup={element} key={i} selectedGroup={selectedGroup} />
+                ))
+              }
+            </div>
+            <div className="flex justify-start ml-[160px] mt-5 flex-wrap">
+              {
+                blockF.map((element, i) => (
+                  <ElementsGroupsF elementGroup={element} key={i} selectedGroup={selectedGroup} />
+                ))
+              }
+            </div>
+          </section>
 
-        <footer ref={ref} className="z-10 bottom-[125px] fixed translate-y-[100%] max-w-[100%] m-0  bg-white dark:bg-[#303030] w-[100%] flex flex-col p-0 shadow-[0_-2px_4px_0_rgba(60,64,67,0.15)] dark:shadow-[0_-2px_4px_0_rgba(230,230,230,0.3)]">
-          <div className="p-5 justify-between flex">
-            <h1 className="text-3xl font-bold text-black dark:text-white">Periodic Table </h1>
+          <nav ref={ref} className="z-10 bottom-[125px] fixed translate-y-[100%] max-w-[100%] m-0  bg-white dark:bg-[#303030] w-[100%] flex flex-col p-0 shadow-[0_-2px_4px_0_rgba(60,64,67,0.15)] dark:shadow-[0_-2px_4px_0_rgba(230,230,230,0.3)]">
+            <div className="p-5 justify-between flex">
+              <h1 className="text-3xl font-bold text-black dark:text-white">Periodic Table </h1>
+              <Switch theme={theme} setTheme={setTheme} />
+            </div>
+            <Groups handleGroupClick={handleGroupClick} />
 
-            <Switch theme={theme} setTheme={setTheme}/>
-          </div>
-
-          <Groups onGroupClick={handleGroupClick} />
-
-        </footer>
-      </div>
-    </main>
+          </nav>
+        </div>
+      </main>
+    </ElementContextProvider>
   )
 }
 

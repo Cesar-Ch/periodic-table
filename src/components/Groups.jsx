@@ -1,10 +1,7 @@
-const Groups = ({ onGroupClick }) => {
+const Groups = ({ handleGroupClick }) => {
 
     const groups = ["Alkali Metals", "Alkaline Earth Metals", "Lanthanides", "Actinides", "Transition Metals", "Post-Transition Metals", "Metalloids", "Non Metals", "Noble Gasses", "Unknown"]
 
-    const handleGroupClick = (group) => {
-        onGroupClick(group)
-    }
     console.log(`${groups[0].toLowerCase().split(' ').join('-')}`)
 
     return (
@@ -14,7 +11,7 @@ const Groups = ({ onGroupClick }) => {
                     groups.map((group, i) => (
                         <div key={i} className="flex items-center ">
                             <div className="w-[15px] h-[15px]  rounded-[50%]"
-                            style={{backgroundColor: `var(--${group.toLowerCase().split(' ').join('-')})`,border:`3px solid var(--${group.toLowerCase().split(' ').join('-')}-text)`}}>
+                                style={{ backgroundColor: `var(--${group.toLowerCase().split(' ').join('-')})`, border: `3px solid var(--${group.toLowerCase().split(' ').join('-')}-text)` }}>
                             </div>
                             <p
                                 onClick={() => handleGroupClick(groups[i].toLowerCase().split(' ').join('-'))}
@@ -24,7 +21,6 @@ const Groups = ({ onGroupClick }) => {
                         </div>
                     ))
                 }
-
             </nav>
         </div>
     )

@@ -6,7 +6,7 @@ const ElementsGroups = ({ elementGroup, selectedGroup }) => {
         <div className="flex flex-col justify-end">
             {
                 elementGroup.map((element, i) => (
-                    <Box selectedGroup={selectedGroup} element={element[0]} name={element[1]} group={element[2]} number={element[3]} key={i} />
+                    <Box  selectedGroup={selectedGroup} element={element[0]} name={element[1]} group={element[2]} number={element[3]} key={i} />
                 ))
             }
         </div>
