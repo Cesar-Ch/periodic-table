@@ -1,8 +1,8 @@
 export const elementsIA = [
-    ["H", "Hydrogen", "non-metals", "1"], ["Li", "Lithium", "alkali-metals", "3"], ["Na", "Sodium", "alkali-metals", "11"], ["K", "Potassium", "alkali-metals", "19"], ["Rb", "Rubidium", "alkali-metals", "37"], ["Cs", "Caesium", "alkali-metals", "55"], ["Fr", "Francium", "alkali-metals", "87"]
+    ["H", "Hydrogen", "non-metals", "1"], ["Li", "Lithium", "alkali-metals", "3"], ["Na", "Sodium", "alkali-metals", "11"], ["K", "Potassium", "alkali-metals", "19"], ["Rb", "Rubidium", "alkali-metals", "37"], ["Cs", "Cesium", "alkali-metals", "55"], ["Fr", "Francium", "alkali-metals", "87"]
 ]
 
-export const elementsIIA = [["Be", "Beryllium", "alkaline-earth-metals", "4"], ["Mg", "Magnesium", "alkaline-earth-metals", "12"], ["Ca", "Calcium", "alkaline-earth-metals", "20"], ["Sr", "Strintium", "alkaline-earth-metals", "38"], ["Ba", "Barium", "alkaline-earth-metals", "56"], ["Ra", "Radium", "alkaline-earth-metals", "88"]]
+export const elementsIIA = [["Be", "Beryllium", "alkaline-earth-metals", "4"], ["Mg", "Magnesium", "alkaline-earth-metals", "12"], ["Ca", "Calcium", "alkaline-earth-metals", "20"], ["Sr", "Strontium", "alkaline-earth-metals", "38"], ["Ba", "Barium", "alkaline-earth-metals", "56"], ["Ra", "Radium", "alkaline-earth-metals", "88"]]
 
 export const elementsIIIB = [["Sc", "Scandium", "transition-metals", "21"], ["Y", "Yttrium", "transition-metals", "39"], ["", "57-71", "lanthanides"], ["", "89-103", "actinides"]]
 
@@ -24,13 +24,13 @@ export const elementsIB = [["Cu", "Copper", "transition-metals", "29"], ["Ag", "
 
 export const elementsIIB = [["Zn", "Zinc", "transition-metals", "30"], ["Cd", "Cadmium", "transition-metals", "48"], ["Hg", "Mercury", "transition-metals", "80"], ["Cn", "Copernicium", "unknown", "112"]]
 
-export const elementsIIIA = [["B", "Boron", "metalloids", "5"], ["Al", "Aluminium", "post-transition-metals", "13"], ["Ga", "Gallium", "post-transition-metals", "31"], ["In", "Indium", "post-transition-metals", "49"], ["Tl", "Thallium", "post-transition-metals", "81"], ["Nh", "Nihonium", "unknown", "113"]]
+export const elementsIIIA = [["B", "Boron", "metalloids", "5"], ["Al", "Aluminum", "post-transition-metals", "13"], ["Ga", "Gallium", "post-transition-metals", "31"], ["In", "Indium", "post-transition-metals", "49"], ["Tl", "Thallium", "post-transition-metals", "81"], ["Nh", "Nihonium", "unknown", "113"]]
 
 export const elementsIVA = [["C", "Carbon", "non-metals", "6"], ["Si", "Silicon", "metalloids", "14"], ["Ge", "Germanium", "metalloids", "32"], ["Sn", "Tin", "post-transition-metals", "50"], ["Pb", "Lead", "post-transition-metals", "82"], ["Fl", "Flerovium", "unknown", "114"]]
 
-export const elementsVA = [["N", "Nitrogen", "non-metals", "7"],["P","Phosphorus","non-metals","15"],["As","Arsenic","metalloids","32"],["Sb","Antimony","metalloids","50"],["Bi","Bismuth","post-transition-metals","82"],["Mc","Moscovium","unknown","115"]]
+export const elementsVA = [["N", "Nitrogen", "non-metals", "7"],["P","Phosphorus","non-metals","15"],["As","Arsenic","metalloids","33"],["Sb","Antimony","metalloids","51"],["Bi","Bismuth","post-transition-metals","83"],["Mc","Moscovium","unknown","115"]]
 
-export const elementsVIA = [["O","Oxygen","non-metals","8"],["S","Sulfur","non-metals","16"],["Se","Selenium","non-metals","34"],["Te","Teosinte","metalloids","52"],["Po","Polonium","post-transition-metals","84"],["Lv","Livermorium","unknown","116"]]
+export const elementsVIA = [["O","Oxygen","non-metals","8"],["S","Sulfur","non-metals","16"],["Se","Selenium","non-metals","34"],["Te","Tellurium","metalloids","52"],["Po","Polonium","post-transition-metals","84"],["Lv","Livermorium","unknown","116"]]
 
 export const elementsVIIA = [["F", "Fluorine", "non-metals", "9"], ["Cl", "Chlorine", "non-metals", "17"], ["Br", "Bromine", "non-metals", "35"], ["I", "Iodine", "non-metals","53"],["At","Astatine","post-transition-metals","85"],["Ts","Tennessine","unknown","117"]]
 

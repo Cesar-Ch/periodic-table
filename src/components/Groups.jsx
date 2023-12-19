@@ -2,8 +2,6 @@ const Groups = ({ handleGroupClick }) => {
 
     const groups = ["Alkali Metals", "Alkaline Earth Metals", "Lanthanides", "Actinides", "Transition Metals", "Post-Transition Metals", "Metalloids", "Non Metals", "Noble Gasses", "Unknown"]
 
-    console.log(`${groups[0].toLowerCase().split(' ').join('-')}`)
-
     return (
         <div>
             <nav className="w-[100%] flex items-center text-sm  overflow-y-hidden overflow-scroll text-black dark:text-white px-4">

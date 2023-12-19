@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import ElementsGroups from "./components/ElementsGroups"
 import Groups from "./components/Groups"
-import { periodicTable } from "./components/consts"
-import { blockF } from "./components/consts"
+import { periodicTable, blockF } from "./data/consts"
 import ElementsGroupsF from "./components/ElementsGroupsF"
 import Switch from "./components/Switch"
 import InfoElement from "./components/InfoElement"
@@ -45,10 +44,10 @@ function App() {
 
   return (
     <ElementContextProvider>
-      <InfoElement/>
-      <main className="text-[10px] w-[100vw] h-[100vh] overflow-auto">
+      <InfoElement />
+      <main className="text-[10px] w-[100vw] h-[100vh] overflow-auto ">
         <div className="w-[100%]  flex flex-col mb-32">
-          <section className="w-[100%] p-10  flex justify-start flex-col">
+          <section className="w-[100%] p-12  flex justify-start flex-col ">
             <div className="flex">
               {
                 periodicTable.map((element, i) => (
