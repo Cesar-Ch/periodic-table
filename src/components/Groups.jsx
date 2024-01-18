@@ -1,4 +1,4 @@
-const Groups = ({ handleGroupClick }) => {
+const Groups = ({ setSelectedGrooup }) => {
 
     const groups = ["Alkali Metals", "Alkaline Earth Metals", "Lanthanides", "Actinides", "Transition Metals", "Post-Transition Metals", "Metalloids", "Non Metals", "Noble Gasses", "Unknown"]
 
@@ -12,7 +12,7 @@ const Groups = ({ handleGroupClick }) => {
                                 style={{ backgroundColor: `var(--${group.toLowerCase().split(' ').join('-')})`, border: `3px solid var(--${group.toLowerCase().split(' ').join('-')}-text)` }}>
                             </div>
                             <p
-                                onClick={() => handleGroupClick(groups[i].toLowerCase().split(' ').join('-'))}
+                                onClick={() => setSelectedGrooup(groups[i].toLowerCase().split(' ').join('-'))}
                                 className={`p-3 cursor-pointer whitespace-nowrap`}  >
                                 {group}
                             </p>
