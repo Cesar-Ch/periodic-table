@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-src/data/consts.js
+src/data
 
 # Editor directories and files
 .vscode/*
