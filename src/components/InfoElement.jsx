@@ -1,24 +1,31 @@
+import ArrowLeft from "../canvas/ArrowLeft"
 import Element from "../canvas/Element"
 import { useElement } from "../context/TaskContext"
 
 const InfoElement = () => {
 
     const { newElement, changeElement } = useElement()
-    console.log(newElement)
     return (
         <div>
             {newElement.name ?
                 (
-                    <div className="z-20 h-[100%] w-[100%] absolute  bg-white dark:bg-[#303030] p-7  overflow-auto" >
-                        <div className="w-[50px] h-[50px] rounded-md  hover:bg-slate-200 flex items-center dark:hover:bg-gray-700  justify-center " onClick={() => changeElement({})}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className=" fixed icon icon-tabler icon-tabler-arrow-narrow-left dark:text-white text-black" width="24" height="24" viewBox="0 0 24 24" strokeWidth="3.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                    <div className="z-20 absolute h-[100%] w-[100%]   bg-white dark:bg-[#303030] p-7  overflow-auto" >
+                        <div className=" w-[50px] h-[50px] rounded-md  hover:bg-slate-200 flex items-center dark:hover:bg-gray-700  justify-center " onClick={() => changeElement({})}>
+                            <ArrowLeft />
                         </div>
-                        <div className="h-[350px] sticky">
+                        <div className="h-[350px] ">
                             <Element number={newElement.number} name={newElement.name} />
                         </div>
-                        <div >
-                            <h1 className="text-3xl dark:text-white text-black">{newElement.name} ({newElement.element}) - {newElement.number}</h1>
-                            <h3 className="text-xl dark:text-white text-black my-2">{newElement.group[0].toUpperCase()}{newElement.group.slice(1,)}</h3>
+                        <div className="dark:text-white text-black flex-col ">
+                            <h1 className="text-3xl">{newElement.name} ({newElement.symbol}) - {newElement.number}</h1>
+                            <h3 className="text-xl my-2">{newElement.group[0].toUpperCase()}{newElement.group.split('-').join(' ').slice(1,)}</h3>
+                            <h3 className="pt-2">Symbol: {newElement.symbol}</h3>
+                            <h3 className="pt-2">Atomic mass: {newElement.mass}</h3>
+                            <h3 className="pt-2">Density: {newElement.density}g/cm³</h3>
+                            <h3 className="pt-2">Melting: {newElement.mp}°C</h3>
+                            <h3 className="pt-2">Boiling: {newElement.bp}°C</h3>
+                            <h3 className="pt-2">Discovered by: {newElement.discovered}</h3>
+                            <h3 className="pt-2">Year of discovery: {newElement.year}</h3>
                             <a href={`https://en.wikipedia.org/wiki/${newElement.name}`} target="__blank" className="bg-slate-200 text-black/75 text-xs flex items-center rounded-md p-1 w-[200px] my-3">
                                 <img src="wikipedia.png" alt="logo de wikipedia" width={30} />
                                 More about {newElement.name}

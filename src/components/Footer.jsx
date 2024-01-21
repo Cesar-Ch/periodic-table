@@ -28,15 +28,14 @@ const Footer = ({setSelectedGrooup}) => {
         }
         document.addEventListener('click', handleClickOutside)
         return () => {
-            console.log('hl')
             document.removeEventListener('click', handleClickOutside)
         }
     }, [])
 
 
     return (
-        <footer>
-            <nav ref={ref} className="z-10 bottom-[125px] fixed translate-y-[100%] max-w-[100%] m-0  bg-white dark:bg-[#303030] w-[100%] flex flex-col p-0 shadow-[0_-2px_4px_0_rgba(60,64,67,0.15)] dark:shadow-[0_-2px_4px_0_rgba(230,230,230,0.3)]">
+        <footer className=" ">
+            <nav ref={ref} className="h-[120px] absolute bottom-[10px] z-10 bg-white dark:bg-[#303030] w-[100%] flex flex-col shadow-[0_-2px_4px_0_rgba(60,64,67,0.15)] dark:shadow-[0_-2px_4px_0_rgba(230,230,230,0.3)]">
                 <div className="p-5 justify-between flex">
                     <h1 className="text-3xl font-bold text-black dark:text-white">Periodic Table </h1>
                     <Switch theme={theme} setTheme={setTheme} />

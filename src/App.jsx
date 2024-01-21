@@ -10,8 +10,10 @@ function App() {
   return (
     <>
       <InfoElement />
-      <Table selectedGroup={selectedGroup} />
-      <Footer setSelectedGrooup={setSelectedGrooup} />
+      <main className="text-[10px] w-[100%] h-[100vh]  ">
+        <Table selectedGroup={selectedGroup} />
+        <Footer setSelectedGrooup={setSelectedGrooup} />
+      </main>
     </>
   )
 }
