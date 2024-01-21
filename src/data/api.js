@@ -39,5 +39,5 @@ const blockF = async () => {
     return groups[1]
 }
 
-export const groupsPeriodicTable = await periodicTable()
-export const groupsblockF = await blockF()
+export const groupsPeriodicTable =  periodicTable()
+export const groupsblockF =  blockF()
