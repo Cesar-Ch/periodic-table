@@ -11,9 +11,8 @@ const Table = ({ selectedGroup }) => {
     useEffect(() => {
         const fetchGroups = async () => {
             try {
-                const response = await fetch("https://periodic-table-api-dev-qdas.1.us-1.fl0.io/groups");
+                const response = await fetch("https://periodic-table-api-24pl.onrender.com/groups");
                 const data = await response.json();
-                console.log('api');
                 const groups = data.map((group, i) => {
 
                     if (i === 2) {
