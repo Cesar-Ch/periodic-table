@@ -14,7 +14,12 @@ const Box = ({ element, selectedGroup }) => {
         <div
             className={`symbol ${categoria} ${isVisible ? 'opacity-100' : 'opacity-60'} ${placeholder ? "pointer-events-none" : "pointer-events-auto"}  w-20 h-20 relative rounded-md mr-1 mb-1 p-1 text-center cursor-pointer`
             }
-            style={{ border: `2px solid var(--${categoria}-text)`, color: `var(--${categoria})`, backgroundColor: `var(--${categoria})` }} onClick={() => { if (!placeholder) changeElement(element) }} translate="no"
+            style={{ 
+                border: `2px solid var(--${categoria}-text)`, 
+                color: `var(--${categoria})`, 
+                backgroundColor: `var(--${categoria})` 
+            }} 
+            onClick={() => { if (!placeholder) changeElement(element) }} translate="no"
         >
             <div className="flex justify-between font-extrabold text-[#3f4a53]" >
                 <div>
