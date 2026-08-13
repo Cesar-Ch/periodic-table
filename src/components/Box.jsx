@@ -1,25 +1,38 @@
 import { useElement } from "../context/TaskContext"
 
-const Box = ({ symbol, name, group, number, selectedGroup, mass, density, mp, bp, discovered, year }) => {
+const Box = ({ element, selectedGroup }) => {
 
     const { changeElement } = useElement()
 
+    if (!element) return null
+
+    const { simbolo, nombre, categoria, numero_atomico, placeholder } = element
+
+    const isVisible = (selectedGroup === 'all') || (selectedGroup === categoria)
+
     return (
         <div
-            className={`symbol ${group} ${(selectedGroup === 'all') || (selectedGroup === group) ? 'opacity-100' : 'opacity-60'} ${symbol ? "pointer-events-auto" : "pointer-events-none"}  w-[75px] h-[75px] relative rounded-md mr-1 mb-1 p-1 text-center cursor-pointer hover:scale-110 hover:z-10 `
+            className={`symbol ${categoria} ${isVisible ? 'opacity-100' : 'opacity-60'} ${placeholder ? "pointer-events-none" : "pointer-events-auto"}  w-20 h-20 relative rounded-md mr-1 mb-1 p-1 text-center cursor-pointer`
             }
-            style={{ border: `2px solid #3f4a53`, color: `var(--${group})`, backgroundColor: `var(--${group})`, boxShadow: `1px 2.5px 1px #555` }} onClick={() => { changeElement({ name, symbol, number, group, mass, density, mp, bp, discovered, year }) }} translate="no"
+            style={{ border: `2px solid var(--${categoria}-text)`, color: `var(--${categoria})`, backgroundColor: `var(--${categoria})` }} onClick={() => { if (!placeholder) changeElement(element) }} translate="no"
         >
-            <div className="flex justify-start font-extrabold text-[#3f4a53]" >
-                {number}
+            <div className="flex justify-between font-extrabold text-[#3f4a53]" >
+                <div>
+                    {numero_atomico ?? ''}
+                </div>
+                
+
             </div>
-            <div className="text-2xl text-[#3f4a53]" style={{
-                textShadow: `1px  1.5px  1px   var(--${group}-text)`, color: `var(--${group}-text) `
-            }}>
-                {symbol}
+            <div
+                className="text-2xl font-bold "
+                style={{
+                    color: `var(--${categoria}-text)`,
+                }}
+            >
+                {simbolo}
             </div>
-            <div style={{ color: `var(--${group}-text)` }}>
-                {name}
+            <div style={{ color: `var(--${categoria}-text)` }}>
+                {nombre}
             </div>
 
         </div >

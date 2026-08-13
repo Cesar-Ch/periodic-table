@@ -1,6 +1,6 @@
 import { useState } from "react"
 import InfoElement from "./components/InfoElement"
-import Table from "./components/Table"
+import { Table } from "./components/Table"
 import Footer from "./components/Footer"
 
 function App() {
