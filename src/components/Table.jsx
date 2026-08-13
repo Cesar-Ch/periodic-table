@@ -1,4 +1,4 @@
-import { blockF, periodicTable } from '../data/buildTable.js';
+import { blockF, periodicTable } from "../data/buildTable"
 import { ElementsGroups } from "./ElementsGroups"
 import { ElementsGroupsF } from "./ElementsGroupsF"
 
