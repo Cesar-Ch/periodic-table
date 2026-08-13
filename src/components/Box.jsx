@@ -12,35 +12,45 @@ const Box = ({ element, selectedGroup }) => {
 
     return (
         <div
-            className={`symbol ${categoria} ${isVisible ? 'opacity-100' : 'opacity-60'} ${placeholder ? "pointer-events-none" : "pointer-events-auto"}  w-20 h-20 relative rounded-md mr-1 mb-1 p-1 text-center cursor-pointer`
-            }
-            style={{ 
-                border: `2px solid var(--${categoria}-text)`, 
-                color: `var(--${categoria})`, 
-                backgroundColor: `var(--${categoria})` 
-            }} 
-            onClick={() => { if (!placeholder) changeElement(element) }} translate="no"
+            className={`
+    group
+    ${isVisible ? 'opacity-100' : 'opacity-60'}
+    ${placeholder ? 'pointer-events-none' : 'pointer-events-auto'}
+    w-20 h-20 relative rounded-md mr-1 mb-1 p-1 text-center
+    cursor-pointer hover:scale-103 transition-all duration-500 ease-in-out
+    hover:bg-[var(--hover-color)] bg-[var(--bg-color)] `}
+            style={{
+                border: `2px solid var(--${categoria}-text)`,
+                '--bg-color': `var(--${categoria})`,
+                '--hover-color': `var(--${categoria}-text)`,
+            }}
+            onClick={() => {
+                if (!placeholder) changeElement(element)
+            }}
+            translate="no"
         >
-            <div className="flex justify-between font-extrabold text-[#3f4a53]" >
-                <div>
-                    {numero_atomico ?? ''}
-                </div>
-                
-
+            <div className="flex justify-between font-extrabold text-[#3f4a53] group-hover:!text-white transition-all duration-300 ease-in-out">
+                {numero_atomico ?? ''}
             </div>
+
             <div
-                className="text-2xl font-bold "
+                className="text-2xl font-bold group-hover:!text-white transition-all duration-300 ease-in-out"
                 style={{
                     color: `var(--${categoria}-text)`,
                 }}
             >
                 {simbolo}
             </div>
-            <div style={{ color: `var(--${categoria}-text)` }}>
+
+            <div
+                className="group-hover:!text-white transition-all duration-300 ease-in-out"
+                style={{
+                    color: `var(--${categoria}-text)`,
+                }}
+            >
                 {nombre}
             </div>
-
-        </div >
+        </div>
     )
 }
 
